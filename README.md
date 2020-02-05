@@ -1,3 +1,5 @@
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/RyanFleck/Django-Deployable-Template/tree/master)
+
 # Django-Deployable-Template
 Django app with users and database, deployable on Heroku.
 
