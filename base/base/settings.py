@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 
 if 'DYNO' in os.environ:
     SECURE_SSL_REDIRECT = True
-    DEBUG = False
+    #DEBUG = False
 
 # Application definition
 
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'base.wsgi.application'
 # Automatically connects to DATABASE_URL environment variable.
 # RCF-CONFIG-STEP: Add DATABASE_URL in local environment, copy/paste heroku db link.
 DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
@@ -111,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'EST' # Was UTC
+TIME_ZONE = 'EST'
 
 USE_I18N = True
 
@@ -124,9 +124,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-
-# Configure Django App for Heroku.
-django_heroku.settings(locals())
-del DATABASES['default']['OPTIONS']['sslmode']
