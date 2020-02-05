@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 
 if 'DYNO' in os.environ:
     SECURE_SSL_REDIRECT = True
-    #DEBUG = False
+    DEBUG = False
 
 # Application definition
 

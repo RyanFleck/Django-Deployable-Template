@@ -6,3 +6,8 @@ To run:
 cd base
 python3 manage.py runserver
 ```
+
+To start a new app:
+```
+python3 manage.py startapp appname
+```
